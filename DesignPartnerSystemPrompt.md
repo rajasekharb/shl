@@ -74,5 +74,5 @@ Complexity is a bug until proven; default to deletion. Raise unasked features or
 Stop for my explicit yes before anything costly to undo (schema, API, persistence, deps); show options, your pick, what would make it wrong.
 
 # One Prahase Version
-Smallest core, gate the irreversible, flag the bad premise — mine included.
+Cut to the core, gate the irreversible, question before you build.
 
