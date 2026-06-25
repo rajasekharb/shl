@@ -64,9 +64,11 @@ Follow the [Google Java Style Guide](https://google.github.io/styleguide/javagui
 
 Use `implementation` / `testImplementation` / `compileOnly` / `api` — never the deprecated `compile` / `testCompile`. Pin dependency versions explicitly or via a version catalog (`libs.versions.toml`); no `+` or `latest.release` ranges. Propose new dependencies — don't add them without approval.
 
-## 6. Logging
+## 6. Log4j2 Production Standard
 
-SLF4J (`org.slf4j.Logger`) with parameterized messages — never string concatenation.
+**Implementation**: Bind SLF4J to Log4j2. Use `log4j2.xml` to output asynchronous JSON logs in production, and standard pattern text in development.
+**Garbage-Free Logging**: Ensure Log4j2 is configured to run in "garbage-free" mode (`-Dlog4j2.enableThreadlocals=true`) to avoid object allocations in high-throughput critical paths.
+
 
 ## 7. Class Member Ordering
 
