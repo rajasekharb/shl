@@ -9,6 +9,8 @@ All code must compile and run on Java 21. Use modern features where they improve
 
 `Optional` is a **return type only** — never a field, method parameter, or collection element.
 
+Always parameterize generics — no raw types. Avoid `var` when the inferred type is ambiguous or the declaration spans method calls that obscure intent.
+
 ## 2. Code Style
 
 Follow the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html), with these overrides:
@@ -21,15 +23,23 @@ Follow the [Google Java Style Guide](https://google.github.io/styleguide/javagui
 
 **Formatting** — Wire a formatter into `./gradlew build` that fails CI on violations. With the indentation and line-length overrides dropped, stock google-java-format now fits the whitespace rules — except it orders static imports first, so add an import-order check (via Spotless or Checkstyle) to keep them below. `@Override` and Javadoc presence aren't formatter concerns; enforce those with Checkstyle.
 
-**Javadoc** must include `@param`, `@return` (unless `void`), and `@throws`. First sentence is a concise third-person summary — *"Parses the input token."* Never leave commented-out code; use version control for history.
+**Formatting details** — K&R braces (opening brace on the same line); braces are required even on single-line `if`/`else`/`for`/`while` blocks. One blank line between methods; two between class-level sections (fields → constructors → methods). No trailing blank lines at end of file. File encoding: UTF-8, no BOM. Exactly one newline at EOF.
+
+**Naming** — Follow Google Java Style for packages (`all.lowercase`), classes (`UpperCamelCase`), methods (`lowerCamelCase`, verb-first), constants (`UPPER_SNAKE_CASE`), and type parameters (`T`, `E`, `K`, `V`). Boolean-returning methods and boolean variables must use an `is`, `has`, `can`, or `should` prefix (e.g. `isValid()`, `hasChildren`).
+
+**Import ordering** — Imports must appear in this sequence, each group separated by a blank line: `java.*` → `javax.*` → `jakarta.*` → `org.*` → `com.*` → all other third-party → project-internal packages → (blank line) → static imports.
+
+**Javadoc** must include `@param`, `@return` (unless `void`), and `@throws`. First sentence is a concise third-person summary — *"Parses the input token."* Use `{@code ...}` for inline code references and `{@link ...}` for type/method cross-references. Never leave commented-out code; use version control for history.
+
+**Inline comments** — Use `//` comments sparingly; code should be self-documenting first. Use `// TODO:` with a short description for planned work. Use `// FIXME:` for known bugs or fragile code that needs attention.
 
 ## 3. Design
 
 **Core** — Immutability by default: `final` fields, unmodifiable collections, records for data carriers. Composition over inheritance. Program to interfaces (`List`, `Map`, `Set` — not `ArrayList`, `HashMap`). One reason to change per class. Fail fast: validate inputs at the point of detection.
 
-**Dependency injection** — Constructor injection over field injection; constructors accept interfaces, not concrete types.
+**Dependency injection** — Constructor injection over field injection; constructors accept interfaces, not concrete types. Avoid service locator patterns or static factory methods that hide dependencies.
 
-**Null safety** — Never return `null` from a method that returns a collection; return an empty one. Use `Objects.requireNonNull(x, "message")` in constructors and public methods. Mark explicitly-nullable points `@Nullable` (`jakarta.annotation` or `org.jspecify`).
+**Null safety** — Never return `null` from a method that returns a collection; return an empty one. Use `Optional<T>` as a return type when absence is a valid, expected outcome. Use `Objects.requireNonNull(x, "message")` in constructors and public methods. Annotate with `@Nullable` (`jakarta.annotation` or `org.jspecify`) where null is explicitly allowed; ensure the chosen annotation library is declared as a `compileOnly` dependency.
 
 **Errors** — Unchecked exceptions for programming errors and unrecoverable conditions; checked exceptions only when the caller can reasonably recover. Custom exceptions extend the most specific base, carry a descriptive message, and preserve the cause via the `Throwable cause` constructor. Never catch `Exception` / `Throwable` except at a top-level boundary, and never swallow silently.
 
