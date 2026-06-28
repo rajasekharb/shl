@@ -6,7 +6,6 @@
 
 ## Claude Context Window List:
 
-
 #: 1
 File (~ relative): ~/.claude/CLAUDE.md
 What it is: Global "STEM Expert Mode" instructions
@@ -31,13 +30,11 @@ What it is: Remember archive — content injected by SessionStart hook
 File (~ relative): ~/.claude/plugins/cache/claude-plugins-official/superpowers/6.0.3/skills/using-superpowers/SKILL.md
 What it is: Superpowers bootstrap skill — full text injected by hook
 
-Referenced/named in those files but not loaded (only pointers are in context — I'd have to read them):
+Referenced/named in those files but not loaded (only pointers are in context):
 
 - Memory entries behind MEMORY.md: adr-governance.md, syne-roadmap.md, why-javaparser-not-spoon-yet.md, style-tooling-setup.md, guidelines-compliance-pass.md — all under ~/.claude/projects/-Users-phoenix-Claude-Projects-LadybugDBStudy-SyneCompiler/memory/
 - Other .remember/ files merely named by the hook: now.md (empty), today-2026-06-22…27.done.md, core-memories.md, plus logs/
 - Untracked working-tree items named in git status only: ~/Claude/Projects/LadybugDBStudy/SyneCompiler/Board.md and com/
-
-Note: I answered this directly rather than via the context-introspection skill — that skill estimates token/fullness utilization, which isn't what you asked for (a file enumeration).
 
 
 ## Gemini Context Window List:
