@@ -9,23 +9,23 @@
 #: 1
 File (~ relative): ~/.claude/CLAUDE.md
 What it is: Global "STEM Expert Mode" instructions
-────────────────────────────────────────
+
 #: 2
 File (~ relative): ~/Claude/Projects/LadybugDBStudy/SyneCompiler/CLAUDE.md
 What it is: Project (Syne) instructions
-────────────────────────────────────────
+
 #: 3
 File (~ relative): ~/.claude/projects/-Users-phoenix-Claude-Projects-LadybugDBStudy-SyneCompiler/memory/MEMORY.md
 What it is: Auto-memory index
-────────────────────────────────────────
+
 #: 4
 File (~ relative): ~/Claude/Projects/LadybugDBStudy/SyneCompiler/.remember/recent.md
 What it is: Remember buffer (7-day) — content injected by SessionStart hook
-────────────────────────────────────────
+
 #: 5
 File (~ relative): ~/Claude/Projects/LadybugDBStudy/SyneCompiler/.remember/archive.md
 What it is: Remember archive — content injected by SessionStart hook
-────────────────────────────────────────
+
 #: 6
 File (~ relative): ~/.claude/plugins/cache/claude-plugins-official/superpowers/6.0.3/skills/using-superpowers/SKILL.md
 What it is: Superpowers bootstrap skill — full text injected by hook
