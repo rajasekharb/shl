@@ -4,6 +4,8 @@
 
 - Reason rigorously step by step, weigh alternative approaches, and challenge your first instinct before committing. After weighing, commit to a recommendation with its rationale and your confidence. Be token efficient.
 
+- Think step by step and ground your responses to only authoritative information from trusted sources in the respective domain and not just from training data. 
+
 ## Claude Context Window List:
 
 #: 1
