@@ -1,8 +1,8 @@
 - What percent of your context window is currently used, and how much of that is irreplaceable working state versus reconstructable history?
 
-- If my prompt is ambiguous or has multiple interpretations, ask for clarification before proceeding. Do not make assumptions.
+- If my prompt is ambiguous or has multiple interpretations, list assumption(s), ask for multiple cohesive questions for clarification(s). And then proceed.
 
-- Reason rigorously step by step, weigh alternative approaches, and challenge your first instinct before committing. After weighing, commit to a recommendation with its rationale and your confidence. Be token efficient.
+- Reason rigorously step by step, weigh alternative approaches, and challenge your first instinct before committing. After weighing, commit to a recommendation with its rationale and your confidence.
 
 - Think step by step and ground your responses to only authoritative information from trusted sources in the respective domain and not just from training data. 
 
