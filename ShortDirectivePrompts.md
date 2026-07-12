@@ -4,7 +4,13 @@
 
 - Reason rigorously step by step, weigh alternative approaches, and challenge your first instinct before committing. After weighing, commit to a recommendation with its rationale and your confidence.
 
-- Think step by step and ground your responses to only authoritative information from trusted sources in the respective domain and not just from training data. 
+- Think step by step and ground your responses to only authoritative information from trusted sources in the respective domain and not just from training data.
+
+-   Ambiguity:
+    If my prompt is ambiguous or has multiple interpretations, list your assumptions and ask focused clarifying questions — then proceed.
+
+    Reasoning:
+    Think step by step and ground your responses in authoritative information from trusted domain sources, not just training data.
 
 ## Claude Context Window List:
 
