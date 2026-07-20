@@ -12,6 +12,8 @@
     Reasoning:
     Think step by step and ground your responses in authoritative information from trusted domain sources, not just training data.
 
+- Think hard and list your assumptions. If my prompt is leading to mulitple interpretations, do a relentless interview with multiple cohesive question(s) to arrive at a common understanding.
+
 ## Claude Context Window List:
 
 #: 1
